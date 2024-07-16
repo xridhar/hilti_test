@@ -3,21 +3,19 @@
     <div class="col-6" style="text-align: left">
       <h3>Profile List</h3>
     </div>
-    <div class="col-3">
+    <div class="col-6" style="text-align: right">
       <button
         type="button"
         (click)="addProfile()"
         class="btn btn-primary"
-        style="float: right"
+        style="margin-right: 2rem"
       >
         Add Profile
       </button>
+      <button class="btn btn-secondary" (click)="signOut()">Sign Out</button>
     </div>
     <div>
       <p>Welcome, {{ email }}</p>
-      <button class="btn btn-secondary btn-lg col-12" (click)="signOut()">
-        Sign Out
-      </button>
     </div>
   </div>
 
