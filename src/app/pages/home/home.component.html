@@ -1,0 +1,36 @@
+<div class="container">
+  <p class="title">For Auth Guard</p>
+  <form [formGroup]="signInForm" (ngSubmit)="signIn()">
+    <div class="mb-3 row">
+      <div class="col-3">
+        <div class="form-floating">
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            formControlName="email"
+            [ngClass]="{
+              'is-invalid': email?.invalid,
+              'is-valid': email?.valid
+            }"
+          />
+          <label for="firstName" class="form-label">Email</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <div class="col-3">
+        <div>
+          <button
+            class="btn btn-primary btn-lg col-12"
+            type="submit"
+            [disabled]="!signInForm.valid"
+          >
+            Sign In
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

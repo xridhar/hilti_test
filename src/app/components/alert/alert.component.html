@@ -1,0 +1,30 @@
+<!-- Modal -->
+<div
+  #modal
+  class="modal fade"
+  id="alertContainer"
+  tabindex="-1"
+  role="dialog"
+  data-bs-backdrop="static"
+  aria-labelledby="alertContainer"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Confirmation</h5>
+      </div>
+      <div class="modal-body">
+        Are you sure want to delete the record - {{ getID$.value }}?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary" (click)="deleteProfile()">
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

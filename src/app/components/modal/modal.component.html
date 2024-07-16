@@ -1,0 +1,161 @@
+<!-- Modal -->
+<div
+  #modal
+  class="modal fade"
+  id="modalContainer"
+  data-bs-backdrop="static"
+  tabindex="-1"
+  aria-labelledby="modalContainer"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modalLabel">Modal title</h1>
+        <button
+          type="button"
+          class="btn-close"
+          (click)="closeModal()"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="mb-3 col-12"></div>
+
+            <div class="mb-3 col-12">
+              <div class="form-floating">
+                <input
+                  formControlName="firstName"
+                  id="firstName"
+                  type="text"
+                  class="form-control"
+                  [ngClass]="{
+                    'is-invalid': firstName?.invalid,
+                    'is-valid': firstName?.valid
+                  }"
+                  placeholder="First Name"
+                />
+                <label for="firstName" class="form-label">First Name</label>
+              </div>
+            </div>
+
+            <div class="mb-3 col-12">
+              <div class="form-floating">
+                <input
+                  formControlName="lastName"
+                  id="lastName"
+                  type="text"
+                  class="form-control"
+                  [ngClass]="{
+                    'is-invalid': lastName?.invalid,
+                    'is-valid': lastName?.valid
+                  }"
+                  placeholder="Last Name"
+                />
+                <label for="lastName" class="form-label">Last Name</label>
+              </div>
+            </div>
+
+            <div class="mb-3 col-12">
+              <div class="form-floating">
+                <input
+                  formControlName="age"
+                  id="age"
+                  type="text"
+                  class="form-control"
+                  [ngClass]="{
+                    'is-invalid': age?.invalid,
+                    'is-valid': age?.valid
+                  }"
+                  placeholder="Age"
+                />
+                <label for="age" class="form-label">Age</label>
+              </div>
+            </div>
+
+            <div class="mb-3 col-12">
+              <div class="form-floating">
+                <input
+                  formControlName="city"
+                  id="city"
+                  type="text"
+                  class="form-control"
+                  [ngClass]="{
+                    'is-invalid': city?.invalid,
+                    'is-valid': city?.valid
+                  }"
+                  placeholder="City"
+                />
+                <label for="city" class="form-label">City</label>
+              </div>
+            </div>
+
+            <div class="mb-3 col-12">
+              <div class="form-floating">
+                <input
+                  formControlName="country"
+                  id="country"
+                  type="text"
+                  class="form-control"
+                  [ngClass]="{
+                    'is-invalid': country?.invalid,
+                    'is-valid': country?.valid
+                  }"
+                  placeholder="Country"
+                />
+                <label for="country" class="form-label">Country</label>
+              </div>
+            </div>
+
+            <div class="mb-3 col-12">
+              <div class="form-floating">
+                <input
+                  formControlName="phone"
+                  id="phone"
+                  type="text"
+                  class="form-control"
+                  [ngClass]="{
+                    'is-invalid': phone?.invalid,
+                    'is-valid': phone?.valid
+                  }"
+                  placeholder="Phone"
+                />
+                <label for="phone" class="form-label">Phone</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <div class="col-12">
+              <div>
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-lg col-12"
+                  [disabled]="!profileForm.valid"
+                >
+                  {{ actionBtnLabel }}
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div>
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-lg col-12"
+                  (click)="closeModal()"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
